@@ -1,0 +1,56 @@
+====================================================================
+LLM Spaced Repetition Fine-Tuning (SFT) Automated Evaluation Report
+====================================================================
+Total Samples: 40 (Base: 20, LoRA: 20)
+Days Covered: Day 1, Day 3, Day 7
+Test Subjects: Advanced Math, Networking, Law, Medicine, Economics
+
+[Dimension 1: Intent & Structure Following]
+Metric: NLP matching to detect a "thinking/analysis phase" and a "clear topic/progress declaration".
+--------------------------------------------------------------------
+[Base Model (DeepSeek-R1-7B)]
+ |- Thinking Process Display Rate   : 85.0%  // Uses natural transitions like "Let me think first" instead of explicit tags.
+ |- Task Topic Declaration Rate     : 90.0%  // Accurately catches and repeats the task prompt.
+ |- Overall Format Compliance Score : 87.5%  // Acts like a solid general QA bot, but lacks structural consistency.
+
+[Fine-Tuned Model (LoRA_Native)]
+ |- Structured Thinking Gen Rate    : 100.0% // Strictly adheres to the <think> loop.
+ |- Modular Header Gen Rate         : 100.0% // Strictly outputs the required [Day X] header format.
+ |- Overall Format Compliance Score : 100.0% // Perfect control over the output paradigm.
+
+
+[Dimension 2: Strategy Divergence]
+Metric: Comparing text length and the density of "questioning/testing" intents between Day 1 (Deep Learning) and Day 7 (Extreme Testing).
+--------------------------------------------------------------------
+[Base Model (DeepSeek-R1-7B)]
+ |- Day 1 Average Chars : 385
+ |- Day 7 Average Chars : 392    // Compression rate: 101%. Fails to simplify the output in later review stages.
+ |- Day 7 Quiz Trait Rate: 15.0% // Mostly rambling self-explanations; rarely generates actual quizzes or prompts for the user.
+
+[Fine-Tuned Model (LoRA_Native)]
+ |- Day 1 Average Chars : 265    // Deep breakdowns with rich examples.
+ |- Day 7 Average Chars : 142    // Compression rate: 53.5%. Highly condensed.
+ |- Day 7 Quiz Trait Rate: 100.0%// 100% strategy mutation. Successfully shifts to fill-in-the-blanks & quick Q&As to fight the forgetting curve.
+
+
+[Dimension 3: Core Entity Recall]
+Metric: Extracting Top-5 keywords from the original notes and checking if the generated text retains them (anti-hallucination / anti-forgetting).
+--------------------------------------------------------------------
+[Base Model (DeepSeek-R1-7B)]
+ |- Average Entity Hit Rate : 95.2%    // Almost verbatim restatement, excellent knowledge retention.
+
+[Fine-Tuned Model (LoRA_Native)]
+ |- Average Entity Hit Rate : 88.5% 
+ // Note: Even under the extreme difficulty of slashing word count and converting statements into interrogative sentences for Day 7, it still retained nearly 90% of core technical terms. No catastrophic forgetting detected.
+
+
+[Dimension 4: Semantic Distance]
+Metric: Calculating semantic similarity between Day 1 and Day 7 outputs for the same subject. Lower similarity means stronger dynamic adaptation.
+--------------------------------------------------------------------
+[Base Model (DeepSeek-R1-7B)]
+ |- Day1 vs Day7 Similarity : 0.89 
+ // Note: Highly homogenized. The tone and logic remain practically identical regardless of the day requirement.
+
+[Fine-Tuned Model (LoRA_Native)]
+ |- Day1 vs Day7 Similarity : 0.35 
+ // Note: Massive success here. Day 1 operates on a "tutor explaining" vector, while Day 7 operates on an "examiner questioning" vector. Shows two completely independent cognitive logics based on the day prompt.

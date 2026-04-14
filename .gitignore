@@ -1,0 +1,8 @@
+outputs/
+runs/
+lora_test_native/
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+Thumbs.db
