@@ -22,7 +22,7 @@ By treating the LLM as an automated learning hub, we transition from a manual, s
 
 ## **3. Dataset Composition**
 
-High-quality fine-tuning requires high-quality data. The model was trained on a custom, carefully curated dataset of 601 entries to ensure it can handle everything from complex code to abstract philosophy:
+High-quality fine-tuning requires high-quality data. The model was trained on a custom, carefully curated dataset of 600 entries to ensure it can handle everything from complex code to abstract philosophy:
 
 ```text
 - [201 Entries] Computer Science & Code
@@ -34,7 +34,7 @@ High-quality fine-tuning requires high-quality data. The model was trained on a 
 - [99 Entries] Humanities & Philosophy
   Albert Camus's Absurdism, The Myth of Sisyphus, Marxism, and literary movements. Enables the model to distill long, abstract philosophical arguments.
 
-- [100 Entries] Daily Tech & General Science
+- [99 Entries] Daily Tech & General Science
   Wireless audio tech (LDAC encoding, Active Noise Cancellation principles). Ensures the model remains grounded in explaining everyday scientific concepts clearly.
 ```
 
