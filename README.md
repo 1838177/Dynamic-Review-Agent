@@ -106,7 +106,7 @@ python eval_dim1.py
 - **`train_native.py`**: The core fine-tuning script. It handles 4-bit quantization loading, LoRA configuration, and the SFT (Supervised Fine-Tuning) process optimized for 8GB VRAM.
 - **`batch_test.py`**: A validation script that runs inference on 20 distinct test cases across both the base model and the LoRA model to generate side-by-side comparison data.
 - **`eval_dim1.py`**: The automated scoring engine. It uses regex and NLP matching to quantify how well the model follows the `<think>` tag and `[Day X]` header requirements.
-- **`test_dataset.jsonl`**: The curated training dataset containing 601 high-quality entries across computer science, engineering, philosophy, and general tech.
+- **`test_dataset.jsonl`**: The curated training dataset containing 600 high-quality entries across computer science, engineering, philosophy, and general tech.
 - **`sft_evaluation_report.txt`**: The final quantitative benchmark report detailing the performance improvements in strategy divergence and format compliance.
 
 ---
